@@ -34,8 +34,14 @@ People in action classification dataset are additionally annotated with a refere
 For optimizer and learning rate, I use:
 - **SGD** optimizer with different learning rates (1e-3 in most cases).
 
-Additionally,I will set up 100 epochs (using early stopping if after 5 epochs, if there is not greater score, it will stop train proccess) ,which is seen as a loop over `batch_size: 4` since this is a vast model, if I set 4 batch size, it will be suitable with my latop configuration. 
+Additionally,I will set up 100 epochs (using early stopping if after 5 epochs, if there is not greater score, it will stop train proccess). The reason i set only 4 batch size is because this model is vast and this setting  is suitable with my latop configuration. 
 
+Regarding to VOC dataset, I have to restructure it to be appropriate with model:
+- Change from (x, y, width, height) to (xmin, ymin, xmax, ymax)
+-  Create the target dictionary: {"boxes": boxes, "labels": labels}
+
+For more details, please take a look at [my VOC dataset](voc_dataset.py) 
+  
 ## Training:
 
 If you want to train a model with default parameters, you could run:
