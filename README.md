@@ -44,21 +44,21 @@ python train_animal.py
 If you want to adjust your preference parameters, here is some option you can choose:
 | Parameters | Abbreviation | Default | Description |
 |:---------:|:---------------:|:---------:|:---------:|
-|    --batch-size |    -b  |    4                                  |Select suitable batch size|
-|    --data-path  |    -d  |    '../../'                            |directory contains dataset|
+|    --batch-size |    -b  |    4                                   |Select suitable batch size|
+|    --data-path  |    -d  |    'directory/contain/yourdata'        |directory contains dataset|
 |    --lr         |        |    1e-3                                |modify learning rate|
 |    --image-size |   -i  |    416                                  |scale image to 416x416|
 |    --epochs     |    -e  |    100                                 |modify epoch number|
-|    --log-path   |    -l  |    pascal_voc                         |[directory contains metrics visualization](https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html)|
+|    --log-path   |    -l  |    pascal_voc                          |[directory contains metrics visualization](https://pytorch.org/tutorials/intermediate/tensorboard_tutorial.html)|
 |    --save-path  |    -s  |    trained_models                      |[Please download my model I trained on my driver](https://drive.google.com/file/d/1GTAnXmVJMaoGO6Kj0Pjf2ZEIKmKy1WWp/view?usp=sharing)|
-|    --checkpoint |   -sc  |    tensorboard/animals/epoch_last.pt   |directory which saves the train model|
+|    --checkpoint |   -sc  |    /trained_models/epoch_last.pt   |directory which saves the train model|
 
 
-`For example:` python train.py -p dataset_location --log-patch directory-name 
+`For example:` python train_faster_rcnn.py -p dataset_location --log-patch directory/contain/visualization --data-path directory/contain/yourdata
  
  **How to view tensorboard:** 
 ```
- tensorboard --logdir directory/contain/tensorboard/
+ tensorboard --logdir directory/contain/visualization
 ```
 ## Evaluating:
 
